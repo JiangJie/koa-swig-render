@@ -1,0 +1,45 @@
+{
+  "name": "koa-swig-render",
+  "version": "0.0.1",
+  "description": "Koa view render based on Swig, support tags, filters, and extensions.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node_modules/.bin/mocha --harmony -R spec -t 5000 test/*.js",
+    "test-cov": "node --harmony node_modules/.bin/istanbul cover node_modules/.bin/_mocha -- -R dot -t 5000 test/*.js",
+    "test-travis": "node --harmony node_modules/.bin/istanbul cover node_modules/.bin/_mocha --report lcovonly -- -R dot -t 5000 test/*.js"
+  },
+  "keywords": [
+    "koa",
+    "render",
+    "view",
+    "swig",
+    "locals",
+    "flash"
+  ],
+  "author": "JarvisJiang <jiang115jie@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "istanbul-harmony": "*",
+    "koa": "*",
+    "koa-flash": "0",
+    "koa-session": "2",
+    "mocha": "*",
+    "should": "*",
+    "supertest": "*"
+  },
+  "dependencies": {
+    "debug": "^2.1.1",
+    "swig": "^1.4.2",
+    "utils-merge": "^1.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JiangJie/koa-swig.git"
+  },
+  "files": [
+    "index.js"
+  ],
+  "bugs": {
+    "url": "https://github.com/JiangJie/koa-swig/issues"
+  }
+}
