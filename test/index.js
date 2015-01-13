@@ -96,16 +96,21 @@ describe('koa-swig', function () {
         .expect(200, done);
     });
 
-    it('should not overwrite context.render', function (done) {
+    it('should overwrite context.render', function (done) {
       var app = koa();
       app.context.render = function () { return 'not swig'; };
-      app.use(render({}));
+      app.use(render({
+        root: path.join(__dirname, '../example'),
+        ext: 'txt'
+      }));
       app.use(function *() {
-        this.body = this.render();
+        this.body = yield this.render('basic', {
+          name: 'koa-swig'
+        });
       });
       request(app.listen())
         .get('/')
-        .expect('not swig')
+        .expect('KOA-SWIG\n')
         .expect(200, done);
     });
 
@@ -117,7 +122,7 @@ describe('koa-swig', function () {
       request(app)
       .get('/')
       .expect('content-type', 'text/html; charset=utf-8')
-      .expect('content-length', '186')
+      .expect('content-length', '193')
       .expect(/<title>koa-swig.*<\/title>/)
       .expect(200, done);
     });

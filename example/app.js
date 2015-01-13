@@ -27,7 +27,7 @@ app.use(render({
 }));
 
 app.use(function *() {
-  yield* this.render('index', {
+  yield this.render('index', {
     user: {
       name: 'fundon',
       email: 'cfddream@gmail.com'
