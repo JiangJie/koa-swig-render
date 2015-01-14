@@ -1,6 +1,6 @@
 {
   "name": "koa-swig-render",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Koa view render based on Swig, support tags, filters, and extensions.",
   "main": "index.js",
   "scripts": {
@@ -34,12 +34,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/JiangJie/koa-swig.git"
+    "url": "https://github.com/JiangJie/koa-swig-render.git"
   },
   "files": [
     "index.js"
   ],
   "bugs": {
-    "url": "https://github.com/JiangJie/koa-swig/issues"
+    "url": "https://github.com/JiangJie/koa-swig-render/issues"
   }
 }
